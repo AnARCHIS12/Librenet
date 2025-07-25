@@ -1,86 +1,153 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin réseau libre & solidaire</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Réseau Freelance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-    body {
-      background-color: #0b0b0b;
-      color: #e9e9e9;
-      font-family: 'JetBrains Mono', monospace;
+    :root {
+      --rouge: #c0392b;
+      --noir: #121212;
+      --gris: #2c2c2c;
+      --blanc: #f5f5f5;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    .container {
-      max-width: 800px;
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--noir);
+      color: var(--blanc);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--gris);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: var(--rouge);
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
       margin: auto;
-      padding: 3rem;
+      animation: fadeIn 1.2s ease-in-out;
     }
-    h1, h2 {
-      color: #e63946;
-    }
-    ul {
-      list-style: square;
-      padding-left: 1.2em;
-    }
-    a {
-      color: #f94144;
-      text-decoration: none;
-      border-bottom: 1px dashed #f94144;
-    }
-    .divider {
-      height: 1px;
-      background-color: #444;
-      margin: 2rem 0;
-    }
-    .logo {
-      width: 60px;
+
+    h2 {
+      font-size: 2rem;
+      color: var(--rouge);
       margin-bottom: 1rem;
+      border-bottom: 2px solid var(--rouge);
+      display: inline-block;
+    }
+
+    .services, .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--gris);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--gris);
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a {
+      color: var(--rouge);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Circled_A.svg/2048px-Circled_A.svg.png" class="logo" alt="Logo anarchiste">
-    <h1>Admin Réseau • Libre & Solidaire</h1>
-    <p><strong>🔧 Services informatiques 100% libres, anti-GAFAM, pour collectifs engagés</strong></p>
 
-    <div class="divider"></div>
+  <header>
+    <h1>TON NOM</h1>
+    <p>Administrateur Réseau – Freelance engagé</p>
+  </header>
 
-    <h2>🛠️ Services proposés</h2>
-    <ul>
-      <li>Installation de serveurs (Linux, mail, Matrix, Nextcloud…)</li>
-      <li>Dégooglisation de collectifs / assos</li>
-      <li>Infrastructure réseau & sécurité numérique</li>
-      <li>Maintenance, surveillance, conseils autonomes</li>
-    </ul>
+  <section>
+    <h2>Qui suis-je ?</h2>
+    <p>
+      Passionné par l'informatique libre et les réseaux décentralisés, je propose mes services d'administration réseau pour les associations, collectifs, TPE ou structures engagées.
+    </p>
+  </section>
 
-    <div class="divider"></div>
+  <section>
+    <h2>Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Installation de serveurs</h3>
+        <p>Serveurs Linux, Nextcloud, mail, Matrix, VPN, hébergement autogéré…</p>
+      </div>
+      <div class="card">
+        <h3>Sécurité réseau</h3>
+        <p>Mises à jour, pare-feu, audits, tunnels chiffrés, anti-DDoS, monitoring.</p>
+      </div>
+      <div class="card">
+        <h3>Conseil & Formations</h3>
+        <p>Accompagnement vers l'autonomie numérique, formations pour collectifs.</p>
+      </div>
+    </div>
+  </section>
 
-    <h2>🎯 Pour qui ?</h2>
-    <p>Associations, collectifs, coopératives, ZAD, médias libres, CHATONS…</p>
-    <p><strong>❌ Aucune collaboration avec :</strong> police, armée, start-ups capitalistes, fascistes, GAFAM, multinationales.</p>
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <div class="card">
+        <p><strong>Email :</strong> <a href="mailto:anarchymedialibertaire@gmail.com">anarchymedialibertaire@gmail.com</a></p>
+      </div>
+      <div class="card">
+        <p>Tarification solidaire : tu paies selon tes moyens.<br/>Contacte-moi pour qu'on définisse ensemble ce qui est juste pour toi.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="divider"></div>
+  <footer>
+    🅐 Site réalisé avec amour, liberté et fibre optique – 2025
+  </footer>
 
-    <h2>💰 Tarifs</h2>
-    <p><strong>Prix libre & conscient</strong> selon les moyens :</p>
-    <ul>
-      <li>Assos précaires : gratuit ou don libre</li>
-      <li>Structures stables : 200–300€/jour</li>
-      <li>Entreprises : 500€/jour</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2>📩 Contact</h2>
-    <p>📧 <a href="mailto:adminlibre@protonmail.com">anarchymedialibertaire@gmail.com</a></p>
-
-    <div class="divider"></div>
-
-    <p><em>« Ni maître, ni serveur propriétaire. »</em></p>
-  </div>
 </body>
 </html>
